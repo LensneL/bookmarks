@@ -50,7 +50,7 @@ ol {
 #header .logo {
     font-family: 'Muli', sans-serif;
     float: left;
-    color: #f3f7cc;
+    color: #2cb5cc;
     font-size: 20px;
     margin-right: 10%;
 }
@@ -68,12 +68,13 @@ ol {
 }
 
 #header ul.menu li.selected a, #header ul.menu li.selected a:hover {
-    color: #1b6d32;
+    color: #2cb5cc;
     font-weight: bold;
+
 }
 
 #header a {
-    color: #f3f7cc;
+    color: #2cb5cc;
 }
 
 #header a:hover {
@@ -83,6 +84,7 @@ ol {
 #header .user {
     float: right;
     padding-top: 4px;
+    color: #2CB5CCFF
 }
 
 #content {
