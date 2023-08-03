@@ -120,9 +120,11 @@ input[type=submit], a.button {
     font-weight: bold;
     background: rgba(126, 74, 215, 0.9);
     color: #fff;
+    border-radius: 10px;
     padding: 10px 20px;
     font-size: 14px;
     text-transform: uppercase;
+    box-shadow: 4px 3px 2px 1px  #622f9d;
 }
 
 .errorlist {
