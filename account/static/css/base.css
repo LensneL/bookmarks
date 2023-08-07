@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: helvetica, sans-serif;
+    font-family: Muli, sans-serif;
 }
 
 p {
@@ -11,7 +11,7 @@ p {
 }
 
 a {
-    color: #2cb5cc;
+    color: #913eea;
     text-decoration: none;
 }
 
@@ -50,7 +50,7 @@ ol {
 #header .logo {
     font-family: 'Muli', sans-serif;
     float: left;
-    color: #2cb5cc;
+    color: #fff;
     font-size: 20px;
     margin-right: 10%;
 }
@@ -68,13 +68,13 @@ ol {
 }
 
 #header ul.menu li.selected a, #header ul.menu li.selected a:hover {
-    color: #2cb5cc;
+    color: #fff;
     font-weight: bold;
 
 }
 
 #header a {
-    color: #2cb5cc;
+    color: #fff;
 }
 
 #header a:hover {
@@ -84,7 +84,7 @@ ol {
 #header .user {
     float: right;
     padding-top: 4px;
-    color: #2CB5CCFF
+    color: #fff
 }
 
 #content {
@@ -128,8 +128,9 @@ input[type=submit], a.button {
     text-transform: uppercase;
 
 }
-input[type=submit]:hover, a.button:hover  {
-    box-shadow: 4px 3px 2px 1px  #622f9d;
+
+input[type=submit]:hover, a.button:hover {
+    box-shadow: 4px 3px 2px 1px #622f9d;
 }
 
 .errorlist {
@@ -162,14 +163,16 @@ ul.messages li.info {
     padding: 14px 20px;
     list-style: none;
     color: #fff;
+    border-radius: 7px;
+    font-weight: bold;
 }
 
 ul.messages li.success {
-    background: #81ce81;
+    background: #58ee75;
 }
 
 ul.messages li.success a {
-    color: #0ac33e;
+    color: #913eea;
 }
 
 ul.messages li.error {
@@ -234,7 +237,7 @@ ul.messages li a.close {
 }
 
 .social li.twitter {
-    background: #00cffa;
+    background: #fff
 }
 
 .social li.google {
