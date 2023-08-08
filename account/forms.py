@@ -44,7 +44,6 @@ class UserEditForm(forms.ModelForm):
             return data
 
 
-
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
