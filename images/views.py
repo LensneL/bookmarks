@@ -16,8 +16,9 @@ def image_create(request):
             messages.success(request,
                              'Image added successfully')
             return redirect(new_image.get_absolute_url())
-        else:
-            form = ImageCreateForm(data=request.GET)
-        return render(request, 'images/image/create.html',
-                      {'section': 'images',
-                       'form': form})
+    else:
+        form = ImageCreateForm(data=request.GET)
+    return render(request,
+                  'images/image/create.html',
+                  {'section': 'images',
+                   'form': form})

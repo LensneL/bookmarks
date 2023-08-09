@@ -13,15 +13,6 @@ class ImageCreateForm(forms.ModelForm):
             'url': forms.HiddenInput,
         }
 
-    def clean_url(self):
-        url = self.cleaned_data['url']
-        valid_extensions = ['jpg', 'png', 'jpeg']
-        extension = url.rsplit('.', 1)[1].lower()
-        if extension not in valid_extensions:
-            raise forms.ValidationError('The given URL does not match valid image extensions')
-
-        return url
-
     def save(self, commit=True, force_insert=False, force_update=False):
         image = super().save(commit=False)
         image_url = self.cleaned_data['url']
@@ -33,3 +24,13 @@ class ImageCreateForm(forms.ModelForm):
         if commit:
             image.save()
         return image
+
+
+def clean_url(self):
+    url = self.cleaned_data['url']
+    valid_extensions = ['jpg', 'jpeg', 'png']
+    extension = url.rsplit('.', 1)[1].lower()
+    if extension not in valid_extensions:
+        raise forms.ValidationError('The given URL does not ' \
+                                    'match valid image extensions.')
+    return url
