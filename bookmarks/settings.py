@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-p-9g6o7t^ei$hba9b0sxe02gl%#vg2uw)pwk2#o5b*vm$t1&5!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['qwertyzxcv.com.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -136,4 +136,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.vk.VKOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
 ]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '592054440948-ll5dkai6l3vloaafersjrg7hb54tlrjv.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
