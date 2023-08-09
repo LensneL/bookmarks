@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-p-9g6o7t^ei$hba9b0sxe02gl%#vg2uw)pwk2#o5b*vm$t1&5!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['lens.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -143,6 +143,8 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '592054440948-ll5dkai6l3vloaafersjrg7hb54tlrjv.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_VK_OAUTH2_KEY = '51725718'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'vliJ7JDzjLNJdJ0rHVhk'
 
 SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.social_details',
