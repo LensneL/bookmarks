@@ -8,13 +8,19 @@ link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = styleUrl + '?r=' + Math.floor(Math.random() * 9999999999999999);
 head.appendChild(link);
+
 var body = document.getElementsByTagName('body')[0];
 boxHtml = '
-    <div id="bookmarklet">
-        <a href="#" id="close">&times;</a>
-        <h1>Select an image to bookmark:</h1>
-        <div class="images"></div>
-    </div>';
+    < div
+id = "bookmarklet" >
+    < a
+href = "#"
+id = "close" > & times;
+</a>
+<h1>Select an image to bookmark:</h1>
+<div class="images"></div>
+</div>
+';
 body.innerHTML += boxHtml;
 
 function bookmarkletLaunch() {
@@ -25,16 +31,18 @@ function bookmarkletLaunch() {
     bookmarklet.querySelector('#close')
         .addEventListener('click', function () {
             bookmarklet.style.display = 'none'
-            images = document.querySelectorAll('img[src$=".jpg"], img[src$=".jpeg"], img[src$=".png"]');
-            images.forEach(image => {
-                if (image.naturalWidth >= minWidth
-                    && image.naturalHeight >= minHeight) {
-                    var imageFound = document.createElement('img');
-                    imageFound.src = image.src;
-                    imagesFound.append(imageFound);
-                }
-            })
+        });
+    images = document.querySelectorAll('img[src$=".jpg"], img[src$=".jpeg"], img[src$=".
+    png
+    "]');
+    images.forEach(image => {
+        if (image.naturalWidth >= minWidth
+            && image.naturalHeight >= minHeight) {
+            var imageFound = document.createElement('img');
+            imageFound.src = image.src;
+            imagesFound.append(imageFound);
         }
+    })
 }
 
 bookmarkletLaunch();
