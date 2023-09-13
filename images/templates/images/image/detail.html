@@ -37,3 +37,30 @@
         </div>
     {% endwith %}
 {% endblock %}
+
+{% block domready %}
+    const url = '{% url "images:like" %}';
+    var options = {
+    method: 'POST',
+    headers: {'X-CSRFToken': csrftoken},
+    mode: 'same-origin'
+    }
+    document.querySelector('a.like')
+    .addEventListener('click', function(e){
+    e.preventDefault();
+    var likeButton = this;
+    // добавить тело запроса
+    var formData = new FormData();
+    formData.append('id', likeButton.dataset.id);
+    formData.append('action', likeButton.dataset.action);
+    options['body'] = formData;
+    // отправить HTTP-запрос
+    fetch(url, options)
+    .then(response => response.json())
+    .then(data => {
+    if (data['status'] === 'ok')
+    {
+    }
+    })
+    });
+{% endblock %}
