@@ -6,6 +6,9 @@ from django.shortcuts import get_object_or_404
 from .models import Image
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+from django.http import HttpResponse
+from django.core.paginator import Paginator, EmptyPage, \
+    PageNotAnInteger
 
 
 @login_required
@@ -51,3 +54,27 @@ def image_like(request):
         except Image.DoesNotExist:
             pass
     return JsonResponse({'status': 'error'})
+
+
+@login_required
+def image_list(request):
+    images = Image.objects.all()
+    paginator = Paginator(images, 8)
+    page = request.GET.get('page')
+    images_only = request.GET.get('images_only')
+    try:
+        images = paginator.page(page)
+    except PageNotAnInteger:
+        images = paginator.page(1)
+    except EmptyPage:
+        if images_only:
+            return HttpResponse('')
+        images = paginator.page(paginator.num_pages)
+
+        if images_only:
+            return render(request, 'images/image/list_images.html',
+                          {'section': 'images',
+                           'images': images})
+    return render(request, 'images/image/list.html',
+                  {'section': 'images',
+                   'images': images})
