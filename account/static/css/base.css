@@ -334,6 +334,8 @@ a.like, a.follow {
 }
 
 img.user-detail {
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     float: left;
 }
