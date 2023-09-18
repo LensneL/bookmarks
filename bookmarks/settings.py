@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['lens.com', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'action',
     'images',
     'account',
     'django.contrib.auth',
